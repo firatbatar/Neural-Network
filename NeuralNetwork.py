@@ -83,13 +83,3 @@ class NeuralNetwork:
         output_outputs = self.activation_func(output_inputs)
 
         return output_outputs
-
-    # def save_state(self, save_name):
-    #     with open(f"{save_name}.txt", "w") as file:
-    #         file.write(np.array_str(self.weights_ih))
-    #         file.write("\n\n\n")
-    #         file.write(np.array_str(self.weights_ho))
-    #
-    # def set_weights(self, w1, w2):
-    #     self.weights_ih = w1
-    #     self.weights_ho = w2

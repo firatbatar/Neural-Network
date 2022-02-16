@@ -8,36 +8,6 @@ import imageio
 np.set_printoptions(threshold=np.inf)
 
 
-def convert_image_to_list(img_file_dir):
-    img_array = np.zeros(28 * 28)
-    img_array_temp = imageio.imread(img_file_dir)
-    index = 0
-    for i in range(len(img_array_temp)):
-        for j in range(len(img_array_temp[i])):
-            img_array[index] = img_array_temp[i, j, 0]
-            index += 1
-
-    img_data = 255.0 - img_array
-    img_data = (img_data / 255.0 * 0.99) + 0.01
-    return img_data
-
-
-# def string_to_ndarray(lines):
-#     for line in lines:
-#         line = line.strip()
-#         line = line.replace("\n", "")
-#         line = line.replace("[", "")
-#         line = line.replace("]", "")
-#         line.strip()
-#         elements = line.split(" ")
-#         while "" in elements:
-#             elements.remove("")
-#         elements = list(map(float, elements))
-#         new_list.append(elements)
-#     new_a = np.array(new_list)
-#     return new_a
-
-
 # Load training and test datasets.
 with open("mnist_datasets/mnist_train_60000.csv", "r") as file:
     train_data = []
@@ -76,9 +46,6 @@ for epoch in range(5):
 
 print("Training is completed!")
 print(f"Training time: {time() - start}")
-
-# # Save the current state of the neural network into a txt file
-# nn.save_state("nn_save")
 
 # Test the network
 correct = 0
