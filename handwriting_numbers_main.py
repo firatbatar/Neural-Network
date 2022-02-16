@@ -9,9 +9,9 @@ np.set_printoptions(threshold=np.inf)
 
 
 # Load training and test datasets.
-with open("mnist_datasets/mnist_train_60000.csv", "r") as file:
+with open("mnist_datasets/mnist_train_100.csv", "r") as file:
     train_data = []
-    for i in range(60000):
+    for i in range(100):
         train_data.append({})
         values = file.readline().split(',')
 
@@ -21,9 +21,9 @@ with open("mnist_datasets/mnist_train_60000.csv", "r") as file:
         target[int(values[0])] = 0.99
         train_data[i]["target"] = target
 
-with open("mnist_datasets/mnist_test_10000.csv", "r") as file:
+with open("mnist_datasets/mnist_test_10.csv", "r") as file:
     test_data = []
-    for i in range(10000):
+    for i in range(10):
         test_data.append({})
         values = file.readline().split(',')
 
